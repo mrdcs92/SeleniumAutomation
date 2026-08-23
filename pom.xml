@@ -15,32 +15,10 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
+		<suiteXmlFile>testSuites/testng.xml</suiteXmlFile>
 	</properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.junit</groupId>
-				<artifactId>junit-bom</artifactId>
-				<version>5.11.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<dependencies>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- Optionally: parameterized tests support -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-params</artifactId>
-			<scope>test</scope>
-		</dependency>
 		<!-- Source: https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -98,6 +76,46 @@
 		</dependency>
 	</dependencies>
 
+	<profiles>
+
+		<profile>
+			<id>Regression</id>
+			<properties>
+				<suiteXmlFile>
+					testSuites/testng.xml
+				</suiteXmlFile>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>Purchase</id>
+			<properties>
+				<suiteXmlFile>
+					testSuites/Purchase.xml
+				</suiteXmlFile>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>ErrorValidation</id>
+			<properties>
+				<suiteXmlFile>
+					testSuites/ErrorValidation.xml
+				</suiteXmlFile>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>Cucumber</id>
+			<properties>
+				<suiteXmlFile>
+					testSuites/CucumberTests.xml
+				</suiteXmlFile>
+			</properties>
+		</profile>
+
+	</profiles>
+
 	<build>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
@@ -117,10 +135,6 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.13.0</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.3.0</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
@@ -145,14 +159,15 @@
 					<version>3.6.1</version>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.5.4</version>
+					<version>3.5.5</version>
+
 					<configuration>
 						<suiteXmlFiles>
-							<suiteXmlFile>testng.xml</suiteXmlFile>
+							<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
+
 				</plugin>
 			</plugins>
 		</pluginManagement>

@@ -6,6 +6,9 @@
 			<include name="ErrorHandling" />
 		</run>
 	</groups>
+	<listeners>
+		<listener class-name="components.Listeners" />
+	</listeners>
 	<test thread-count="5" name="Error Validation Test">
 		<classes>
 			<class name="tests.ErrorValidation" />

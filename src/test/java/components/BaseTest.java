@@ -15,6 +15,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -28,11 +32,11 @@ public class BaseTest {
 
 	private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public LandingPage landingPage;
-	
+
 	public static WebDriver getDriver() {
 		return driver.get();
 	}
-	
+
 	public static void setDriver(WebDriver webDriver) {
 		driver.set(webDriver);
 	}
@@ -46,7 +50,7 @@ public class BaseTest {
 
 		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
 				: prop.getProperty("browser");
-		
+
 		WebDriver webDriver = null;
 
 		if (browserName.contains("chrome")) {
@@ -61,13 +65,34 @@ public class BaseTest {
 			webDriver = new ChromeDriver(options);
 			// driver.manage().window().setSize(new Dimension(1440, 900));
 		} else if (browserName.equalsIgnoreCase("firefox")) {
-			// firefox
+			FirefoxOptions options = new FirefoxOptions();
+			WebDriverManager.firefoxdriver().setup();
+			if (browserName.contains("headless")) {
+				options.addArguments("--headless=new");
+				options.addArguments("--no-sandbox");
+				options.addArguments("--window-size=2560,1440");
+			}
+			webDriver = new FirefoxDriver(options);
+		} else if (browserName.equalsIgnoreCase("edge")) {
+			EdgeOptions options = new EdgeOptions();
+
+			WebDriverManager.edgedriver().setup();
+
+			if (browserName.toLowerCase().contains("headless")) {
+				options.addArguments("--headless=new");
+				options.addArguments("--no-sandbox");
+				options.addArguments("--window-size=2560,1440");
+			}
+			webDriver = new EdgeDriver(options);
+		} else {
+
+			throw new IllegalArgumentException("Unsupported browser: " + browserName);
 		}
 
 		setDriver(webDriver);
 		if (!browserName.toLowerCase().contains("headless")) {
-            getDriver().manage().window().maximize();
-        }
+			getDriver().manage().window().maximize();
+		}
 
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
@@ -93,10 +118,9 @@ public class BaseTest {
 	public String getScreenshot(String testCaseName, WebDriver webDriver) throws IOException {
 
 		if (webDriver == null) {
-            throw new IllegalStateException(
-                    "Cannot take screenshot because WebDriver is null.");
-        }
-		
+			throw new IllegalStateException("Cannot take screenshot because WebDriver is null.");
+		}
+
 		TakesScreenshot ts = (TakesScreenshot) webDriver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File file = new File(System.getProperty("user.dir") + "//reports//" + testCaseName + ".png");
@@ -124,7 +148,7 @@ public class BaseTest {
 			} finally {
 				driver.remove();
 			}
-			
+
 		}
 	}
 }
