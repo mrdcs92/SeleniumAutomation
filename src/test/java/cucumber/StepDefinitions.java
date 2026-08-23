@@ -64,14 +64,14 @@ public class StepDefinitions extends BaseTest {
 		
 		String confirmMessage = confirmationPage.verifyConfirmationMessage();
 		Assert.assertTrue(confirmMessage.equals(string));
-		driver.quit();
+		BaseTest.getDriver().quit();
 		
 	}
 
 	@Then("{string} message is displayed")
 	public void messageIsDisplayed(String string) {
 		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
-		driver.close();
+		BaseTest.getDriver().quit();
 	}
 	
 }

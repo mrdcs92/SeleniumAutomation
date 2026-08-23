@@ -26,8 +26,16 @@ import pageobjects.LandingPage;
 
 public class BaseTest {
 
-	public WebDriver driver;
+	private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public LandingPage landingPage;
+	
+	public static WebDriver getDriver() {
+		return driver.get();
+	}
+	
+	public static void setDriver(WebDriver webDriver) {
+		driver.set(webDriver);
+	}
 
 	public WebDriver initializeDriver() throws IOException {
 
@@ -38,7 +46,8 @@ public class BaseTest {
 
 		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
 				: prop.getProperty("browser");
-		// String browserName = prop.getProperty("browser");
+		
+		WebDriver webDriver = null;
 
 		if (browserName.contains("chrome")) {
 			ChromeOptions options = new ChromeOptions();
@@ -49,17 +58,20 @@ public class BaseTest {
 				options.addArguments("--window-size=2560,1440");
 			}
 
-			driver = new ChromeDriver(options);
+			webDriver = new ChromeDriver(options);
 			// driver.manage().window().setSize(new Dimension(1440, 900));
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			// firefox
 		}
 
-		driver.manage().window().maximize();
+		setDriver(webDriver);
+		if (!browserName.toLowerCase().contains("headless")) {
+            getDriver().manage().window().maximize();
+        }
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
-		return driver;
+		return getDriver();
 
 	}
 
@@ -78,9 +90,14 @@ public class BaseTest {
 		return data;
 	}
 
-	public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
+	public String getScreenshot(String testCaseName, WebDriver webDriver) throws IOException {
 
-		TakesScreenshot ts = (TakesScreenshot) driver;
+		if (webDriver == null) {
+            throw new IllegalStateException(
+                    "Cannot take screenshot because WebDriver is null.");
+        }
+		
+		TakesScreenshot ts = (TakesScreenshot) webDriver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		File file = new File(System.getProperty("user.dir") + "//reports//" + testCaseName + ".png");
 		FileUtils.copyFile(source, file);
@@ -90,8 +107,8 @@ public class BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	public LandingPage launchApplication() throws IOException {
 
-		driver = initializeDriver();
-		landingPage = new LandingPage(driver);
+		initializeDriver();
+		landingPage = new LandingPage(getDriver());
 		landingPage.goTo();
 		return landingPage;
 
@@ -100,8 +117,14 @@ public class BaseTest {
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {
 
-		if (driver != null) {
-			driver.quit();
+		WebDriver webDriver = getDriver();
+		if (webDriver != null) {
+			try {
+				webDriver.quit();
+			} finally {
+				driver.remove();
+			}
+			
 		}
 	}
 }

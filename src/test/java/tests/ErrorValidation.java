@@ -10,12 +10,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import components.BaseTest;
+import components.Retry;
 import pageobjects.CartPage;
 import pageobjects.ProductCatalogue;
 
 public class ErrorValidation extends BaseTest {
 
-	@Test(dataProvider = "getData", groups = { "ErrorHandling" })
+	@Test(dataProvider = "getData", groups = { "ErrorHandling" }, retryAnalyzer = Retry.class)
 	public void LoginErrorValidation(HashMap<String, String> input) throws IOException {
 
 		landingPage.loginApplication(input.get("email"), "199922dst!taN19992");
@@ -23,7 +24,7 @@ public class ErrorValidation extends BaseTest {
 
 	}
 
-	@Test(dataProvider = "getData")
+	@Test(dataProvider = "getData", retryAnalyzer = Retry.class)
 	public void ProductErrorValidation(HashMap<String, String> input) throws IOException {
 		ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
 		List<WebElement> products = productCatalogue.getProductList();

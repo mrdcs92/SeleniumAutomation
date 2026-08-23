@@ -73,18 +73,16 @@ public class Listeners extends BaseTest implements ITestListener {
 		// TODO Auto-generated method stub
 		ExtentTestManager.getTest().fail(result.getThrowable());
 
-		try {
-			driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
-		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		WebDriver webDriver = BaseTest.getDriver();
 		String filePath = null;
-		try {
-			filePath = getScreenshot(result.getMethod().getMethodName(), driver);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		
+		if (webDriver != null) {
+			try {
+				filePath = getScreenshot(result.getMethod().getMethodName(), webDriver);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		ExtentTestManager.getTest().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
 		ExtentTestManager.removeTest();
