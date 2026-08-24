@@ -10,7 +10,7 @@ public class Retry implements IRetryAnalyzer {
 	
 	@Override
 	public boolean retry(ITestResult result) {
-		// TODO Auto-generated method stub
+		// set retry count to 1
 		
 		if (count < maxTry) {
 			count++;
