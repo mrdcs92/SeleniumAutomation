@@ -1,113 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="1" ignored="0" total="13" passed="12" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-08-23T14:40:16 PDT" name="Suite" finished-at="2026-08-23T14:41:45 PDT" duration-ms="88855">
+  <suite started-at="2026-08-23T19:40:23 PDT" name="Suite" finished-at="2026-08-23T19:40:52 PDT" duration-ms="28305">
     <groups>
-      <group name="Purchase">
-        <method signature="SubmitOrderTest.submitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@14a50707]" name="submitOrder" class="tests.SubmitOrderTest"/>
-      </group> <!-- Purchase -->
-      <group name="ErrorHandling">
-        <method signature="ErrorValidation.LoginErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@776a6d9b]" name="LoginErrorValidation" class="tests.ErrorValidation"/>
-      </group> <!-- ErrorHandling -->
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@421e361]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@791d1f8b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-08-23T14:40:16 PDT" name="Error Validation Test" finished-at="2026-08-23T14:40:42 PDT" duration-ms="26192">
-      <class name="tests.ErrorValidation">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:16 PDT" name="launchApplication" finished-at="2026-08-23T14:40:21 PDT" duration-ms="5010" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="LoginErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:21 PDT" name="LoginErrorValidation" data-provider="getData" finished-at="2026-08-23T14:40:21 PDT" duration-ms="625" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=1999222dst!taN1999222, product=ZARA COAT 3, email=misterdcs92@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:21 PDT" name="tearDown" finished-at="2026-08-23T14:40:22 PDT" duration-ms="210" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:22 PDT" name="launchApplication" finished-at="2026-08-23T14:40:26 PDT" duration-ms="4349" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="LoginErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:26 PDT" name="LoginErrorValidation" data-provider="getData" finished-at="2026-08-23T14:40:27 PDT" duration-ms="591" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=1999222dst!taN1999222, product=ADIDAS ORIGINAL, email=misterdcs1992@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:27 PDT" name="tearDown" finished-at="2026-08-23T14:40:27 PDT" duration-ms="319" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:27 PDT" name="launchApplication" finished-at="2026-08-23T14:40:32 PDT" duration-ms="4747" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="ProductErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:32 PDT" name="ProductErrorValidation" data-provider="getData" finished-at="2026-08-23T14:40:34 PDT" duration-ms="2778" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=1999222dst!taN1999222, product=ZARA COAT 3, email=misterdcs92@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:34 PDT" name="tearDown" finished-at="2026-08-23T14:40:35 PDT" duration-ms="132" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:35 PDT" name="launchApplication" finished-at="2026-08-23T14:40:39 PDT" duration-ms="4383" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="ProductErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:39 PDT" name="ProductErrorValidation" data-provider="getData" finished-at="2026-08-23T14:40:42 PDT" duration-ms="2743" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=1999222dst!taN1999222, product=ADIDAS ORIGINAL, email=misterdcs1992@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@776a6d9b]" started-at="2026-08-23T14:40:42 PDT" name="tearDown" finished-at="2026-08-23T14:40:42 PDT" duration-ms="136" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.ErrorValidation -->
-    </test> <!-- Error Validation Test -->
-    <test started-at="2026-08-23T14:40:16 PDT" name="Cucumber Tests" finished-at="2026-08-23T14:40:43 PDT" duration-ms="27278">
+    <test started-at="2026-08-23T19:40:23 PDT" name="Cucumber Tests" finished-at="2026-08-23T19:40:52 PDT" duration-ms="28305">
       <class name="cucumber.TestNGTestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.TestNGTestRunner@421e361]" started-at="2026-08-23T14:40:16 PDT" name="setUpClass" finished-at="2026-08-23T14:40:16 PDT" duration-ms="425" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.TestNGTestRunner@791d1f8b]" started-at="2026-08-23T19:40:23 PDT" name="setUpClass" finished-at="2026-08-23T19:40:24 PDT" duration-ms="413" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@341814d3]]>
+                <![CDATA[org.testng.TestRunner@5e3d57c7]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@421e361]" started-at="2026-08-23T14:40:16 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T14:40:22 PDT" duration-ms="5846" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@791d1f8b]" started-at="2026-08-23T19:40:24 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T19:40:30 PDT" duration-ms="6546" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -123,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@421e361]" started-at="2026-08-23T14:40:22 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T14:40:27 PDT" duration-ms="5042" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@791d1f8b]" started-at="2026-08-23T19:40:30 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T19:40:35 PDT" duration-ms="4887" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -139,7 +53,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@421e361]" started-at="2026-08-23T14:40:27 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T14:40:35 PDT" duration-ms="8048" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@791d1f8b]" started-at="2026-08-23T19:40:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T19:40:43 PDT" duration-ms="8170" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -155,7 +69,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@421e361]" started-at="2026-08-23T14:40:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T14:40:43 PDT" duration-ms="7883" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@791d1f8b]" started-at="2026-08-23T19:40:43 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T19:40:52 PDT" duration-ms="8251" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -171,171 +85,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.TestNGTestRunner@421e361]" started-at="2026-08-23T14:40:43 PDT" name="tearDownClass" finished-at="2026-08-23T14:40:43 PDT" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.TestNGTestRunner@791d1f8b]" started-at="2026-08-23T19:40:52 PDT" name="tearDownClass" finished-at="2026-08-23T19:40:52 PDT" duration-ms="12" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- cucumber.TestNGTestRunner -->
     </test> <!-- Cucumber Tests -->
-    <test started-at="2026-08-23T14:40:16 PDT" name="Submit Order Test" finished-at="2026-08-23T14:41:45 PDT" duration-ms="88855">
-      <class name="tests.SubmitOrderTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:40:16 PDT" name="launchApplication" finished-at="2026-08-23T14:40:21 PDT" duration-ms="4968" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:40:21 PDT" name="submitOrder" data-provider="getData" finished-at="2026-08-23T14:40:25 PDT" duration-ms="3864" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=1999222dst!taN1999222, product=ZARA COAT 3, email=misterdcs92@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:40:25 PDT" name="tearDown" finished-at="2026-08-23T14:40:25 PDT" duration-ms="178" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:40:25 PDT" name="launchApplication" finished-at="2026-08-23T14:40:29 PDT" duration-ms="4148" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:40:29 PDT" name="submitOrder" data-provider="getData" finished-at="2026-08-23T14:40:33 PDT" duration-ms="3724" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=1999222dst!taN1999222, product=ADIDAS ORIGINAL, email=misterdcs1992@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:40:33 PDT" name="tearDown" finished-at="2026-08-23T14:40:33 PDT" duration-ms="150" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:40:33 PDT" name="launchApplication" finished-at="2026-08-23T14:41:04 PDT" duration-ms="31011" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method retried="true" signature="OrderHistoryTest(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:41:04 PDT" name="OrderHistoryTest" data-provider="getData" finished-at="2026-08-23T14:41:34 PDT" depends-on-methods="tests.SubmitOrderTest.submitOrder" duration-ms="30046" status="SKIP">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=1999222dst!taN1999222, product=ZARA COAT 3, email=misterdcs92@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#userEmail"}
-  (Session info: chrome=151.0.7922.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.47.0', revision: '9175ed9 9175ed94d83e87cc3abeb7c9fd91367d17849d35'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5a4517d49db089e781fd1a545d519828, findElement {using=id, value=userEmail}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.170, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: C:\Users\mrdcs\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49384}, goog:processID: 31520, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49384/devtoo..., se:cdpVersion: 151.0.7922.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5a4517d49db089e781fd1a545d519828]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#userEmail"}
-  (Session info: chrome=151.0.7922.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.47.0', revision: '9175ed9 9175ed94d83e87cc3abeb7c9fd91367d17849d35'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5a4517d49db089e781fd1a545d519828, findElement {using=id, value=userEmail}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.170, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: C:\Users\mrdcs\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49384}, goog:processID: 31520, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49384/devtoo..., se:cdpVersion: 151.0.7922.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5a4517d49db089e781fd1a545d519828
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:653)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:173)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:67)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:417)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:411)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy28.sendKeys(Unknown Source)
-at pageobjects.LandingPage.loginApplication(LandingPage.java:39)
-at tests.SubmitOrderTest.OrderHistoryTest(SubmitOrderTest.java:49)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:744)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1583)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OrderHistoryTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:41:34 PDT" name="tearDown" finished-at="2026-08-23T14:41:34 PDT" duration-ms="151" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:41:34 PDT" name="launchApplication" finished-at="2026-08-23T14:41:38 PDT" duration-ms="3913" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="OrderHistoryTest(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:41:38 PDT" name="OrderHistoryTest" data-provider="getData" finished-at="2026-08-23T14:41:39 PDT" depends-on-methods="tests.SubmitOrderTest.submitOrder" duration-ms="1008" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=1999222dst!taN1999222, product=ZARA COAT 3, email=misterdcs92@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OrderHistoryTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:41:39 PDT" name="tearDown" finished-at="2026-08-23T14:41:39 PDT" duration-ms="133" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:41:39 PDT" name="launchApplication" finished-at="2026-08-23T14:41:43 PDT" duration-ms="4246" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="OrderHistoryTest(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:41:43 PDT" name="OrderHistoryTest" data-provider="getData" finished-at="2026-08-23T14:41:44 PDT" depends-on-methods="tests.SubmitOrderTest.submitOrder" duration-ms="1009" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=1999222dst!taN1999222, product=ADIDAS ORIGINAL, email=misterdcs1992@gmail.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OrderHistoryTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrderTest@14a50707]" started-at="2026-08-23T14:41:44 PDT" name="tearDown" finished-at="2026-08-23T14:41:45 PDT" duration-ms="134" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.SubmitOrderTest -->
-    </test> <!-- Submit Order Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -1,12 +1,261 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-08-23T16:12:01 PDT" name="Suite" finished-at="2026-08-23T16:12:01 PDT" duration-ms="0">
+  <suite started-at="2026-08-23T22:49:39 PDT" name="Suite" finished-at="2026-08-23T22:50:09 PDT" duration-ms="29466">
     <groups>
+      <group name="Purchase">
+        <method signature="SubmitOrderTest.submitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" name="submitOrder" class="tests.SubmitOrderTest"/>
+      </group> <!-- Purchase -->
+      <group name="ErrorHandling">
+        <method signature="ErrorValidation.LoginErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@33ecda92]" name="LoginErrorValidation" class="tests.ErrorValidation"/>
+      </group> <!-- ErrorHandling -->
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@14dd7b39]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@6c7a164b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
+    <test started-at="2026-08-23T22:49:39 PDT" name="Error Validation Test" finished-at="2026-08-23T22:50:07 PDT" duration-ms="27523">
+      <class name="tests.ErrorValidation">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:39 PDT" name="launchApplication" finished-at="2026-08-23T22:49:45 PDT" duration-ms="5223" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="LoginErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:45 PDT" name="LoginErrorValidation" data-provider="getData" finished-at="2026-08-23T22:49:45 PDT" duration-ms="639" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=1999222dst!taN1999222, product=ZARA COAT 3, email=misterdcs92@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:45 PDT" name="tearDown" finished-at="2026-08-23T22:49:45 PDT" duration-ms="229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:45 PDT" name="launchApplication" finished-at="2026-08-23T22:49:50 PDT" duration-ms="4559" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="LoginErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:50 PDT" name="LoginErrorValidation" data-provider="getData" finished-at="2026-08-23T22:49:51 PDT" duration-ms="625" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=1999222dst!taN1999222, product=ADIDAS ORIGINAL, email=misterdcs1992@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:51 PDT" name="tearDown" finished-at="2026-08-23T22:49:51 PDT" duration-ms="232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:51 PDT" name="launchApplication" finished-at="2026-08-23T22:49:55 PDT" duration-ms="4338" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="ProductErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:55 PDT" name="ProductErrorValidation" data-provider="getData" finished-at="2026-08-23T22:49:58 PDT" duration-ms="2844" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=1999222dst!taN1999222, product=ZARA COAT 3, email=misterdcs92@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:58 PDT" name="tearDown" finished-at="2026-08-23T22:49:58 PDT" duration-ms="226" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:49:58 PDT" name="launchApplication" finished-at="2026-08-23T22:50:04 PDT" duration-ms="5246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="ProductErrorValidation(java.util.HashMap)[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:50:04 PDT" name="ProductErrorValidation" data-provider="getData" finished-at="2026-08-23T22:50:06 PDT" duration-ms="2908" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=1999222dst!taN1999222, product=ADIDAS ORIGINAL, email=misterdcs1992@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductErrorValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ErrorValidation@33ecda92]" started-at="2026-08-23T22:50:06 PDT" name="tearDown" finished-at="2026-08-23T22:50:07 PDT" duration-ms="274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.ErrorValidation -->
+    </test> <!-- Error Validation Test -->
+    <test started-at="2026-08-23T22:49:39 PDT" name="Cucumber Tests" finished-at="2026-08-23T22:50:08 PDT" duration-ms="28430">
+      <class name="cucumber.TestNGTestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumber.TestNGTestRunner@6c7a164b]" started-at="2026-08-23T22:49:39 PDT" name="setUpClass" finished-at="2026-08-23T22:49:40 PDT" duration-ms="489" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4bd31064]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@6c7a164b]" started-at="2026-08-23T22:49:40 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T22:49:45 PDT" duration-ms="5785" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test incorrect name and password using misterdcs92@gmail.com"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Error validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@6c7a164b]" started-at="2026-08-23T22:49:45 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T22:49:51 PDT" duration-ms="5182" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Test incorrect name and password using misterdcs1992@gmail.com"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Error validation"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@6c7a164b]" started-at="2026-08-23T22:49:51 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T22:49:59 PDT" duration-ms="8447" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Submit order for ZARA COAT 3 using misterdcs92@gmail.com"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Purchase the order from Ecommerce Website"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumber.TestNGTestRunner@6c7a164b]" started-at="2026-08-23T22:49:59 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-23T22:50:08 PDT" duration-ms="8480" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Submit order for ADIDAS ORIGINAL using misterdcs1992@gmail.com"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Purchase the order from Ecommerce Website"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumber.TestNGTestRunner@6c7a164b]" started-at="2026-08-23T22:50:08 PDT" name="tearDownClass" finished-at="2026-08-23T22:50:08 PDT" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- cucumber.TestNGTestRunner -->
+    </test> <!-- Cucumber Tests -->
+    <test started-at="2026-08-23T22:49:39 PDT" name="Submit Order Test" finished-at="2026-08-23T22:50:09 PDT" duration-ms="29466">
+      <class name="tests.SubmitOrderTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:49:39 PDT" name="launchApplication" finished-at="2026-08-23T22:49:45 PDT" duration-ms="5395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:49:45 PDT" name="submitOrder" data-provider="getData" finished-at="2026-08-23T22:49:49 PDT" duration-ms="3910" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=1999222dst!taN1999222, product=ZARA COAT 3, email=misterdcs92@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:49:49 PDT" name="tearDown" finished-at="2026-08-23T22:49:49 PDT" duration-ms="236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:49:49 PDT" name="launchApplication" finished-at="2026-08-23T22:49:53 PDT" duration-ms="4280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:49:53 PDT" name="submitOrder" data-provider="getData" finished-at="2026-08-23T22:49:57 PDT" duration-ms="3862" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=1999222dst!taN1999222, product=ADIDAS ORIGINAL, email=misterdcs1992@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:49:57 PDT" name="tearDown" finished-at="2026-08-23T22:49:57 PDT" duration-ms="344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:49:57 PDT" name="launchApplication" finished-at="2026-08-23T22:50:02 PDT" duration-ms="4431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="OrderHistoryTest(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:50:02 PDT" name="OrderHistoryTest" data-provider="getData" finished-at="2026-08-23T22:50:03 PDT" depends-on-methods="tests.SubmitOrderTest.submitOrder" duration-ms="1219" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=1999222dst!taN1999222, product=ZARA COAT 3, email=misterdcs92@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OrderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:50:03 PDT" name="tearDown" finished-at="2026-08-23T22:50:03 PDT" duration-ms="234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:50:03 PDT" name="launchApplication" finished-at="2026-08-23T22:50:07 PDT" duration-ms="3986" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="OrderHistoryTest(java.util.HashMap)[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:50:07 PDT" name="OrderHistoryTest" data-provider="getData" finished-at="2026-08-23T22:50:08 PDT" depends-on-methods="tests.SubmitOrderTest.submitOrder" duration-ms="1183" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=1999222dst!taN1999222, product=ADIDAS ORIGINAL, email=misterdcs1992@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OrderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SubmitOrderTest@3bcd05cb]" started-at="2026-08-23T22:50:08 PDT" name="tearDown" finished-at="2026-08-23T22:50:09 PDT" duration-ms="209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.SubmitOrderTest -->
+    </test> <!-- Submit Order Test -->
   </suite> <!-- Suite -->
 </testng-results>

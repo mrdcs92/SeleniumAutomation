@@ -64,7 +64,7 @@ public class BaseTest {
 
 			webDriver = new ChromeDriver(options);
 			// driver.manage().window().setSize(new Dimension(1440, 900));
-		} else if (browserName.equalsIgnoreCase("firefox")) {
+		} else if (browserName.contains("firefox")) {
 			FirefoxOptions options = new FirefoxOptions();
 			WebDriverManager.firefoxdriver().setup();
 			if (browserName.contains("headless")) {
@@ -73,11 +73,9 @@ public class BaseTest {
 				options.addArguments("--window-size=2560,1440");
 			}
 			webDriver = new FirefoxDriver(options);
-		} else if (browserName.equalsIgnoreCase("edge")) {
+		} else if (browserName.contains("edge")) {
 			EdgeOptions options = new EdgeOptions();
-
 			WebDriverManager.edgedriver().setup();
-
 			if (browserName.toLowerCase().contains("headless")) {
 				options.addArguments("--headless=new");
 				options.addArguments("--no-sandbox");

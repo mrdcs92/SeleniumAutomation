@@ -42,7 +42,7 @@ public class StepDefinitions extends BaseTest {
 	
 	@When("^I add product (.+) to Cart$")
 	public void I_add_product_to_Cart(String productName) {	
-		List<WebElement> products = productCatalogue.getProductList();
+		// List<WebElement> products = productCatalogue.getProductList();
 		
 		ExtentTestManager.getTest().info("Product: " + productName);
 		productCatalogue.addProductToCart(productName);
