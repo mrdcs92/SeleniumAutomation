@@ -1,9 +1,0 @@
-components\AbstractComponent.class
-data\DataReader$1.class
-pageobjects\OrderPage.class
-pageobjects\ProductCatalogue.class
-data\DataReader.class
-pageobjects\CheckoutPage.class
-pageobjects\LandingPage.class
-pageobjects\CartPage.class
-pageobjects\ConfirmationPage.class
