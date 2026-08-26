@@ -114,6 +114,15 @@
 			</properties>
 		</profile>
 
+		<profile>
+			<id>DbTest</id>
+			<properties>
+				<suiteXmlFile>
+					testSuites/DatabaseTests.xml
+				</suiteXmlFile>
+			</properties>
+		</profile>
+
 	</profiles>
 
 	<build>
