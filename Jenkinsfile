@@ -15,6 +15,25 @@ pipeline {
 			description: 'Select the Maven test profile to execute'
 		)
 		
+		choice(
+			name: 'BROWSER',
+			choices: [
+				'chrome',
+				'edge',
+				'firefox',
+			],
+			description: 'Browser to use for Selenium'
+		)
+		
+		choice(
+			name: 'HEADLESS',
+			choices: [
+				' ',
+				'headless'
+			],
+			description: 'Choice of running headless or not'
+		)
+		
 	}
 	
     stages {
@@ -26,9 +45,9 @@ pipeline {
             }
         }
 
-        stage('Run Regression Tests') {
+        stage("Run -P${params.TEST_SUITE} Tests") {
             steps {
-                bat "mvn clean test -P${params.TEST_SUITE}"
+                bat "mvn clean test -P${params.TEST_SUITE} -Dbrowser=${params.BROWSER}${params.HEADLESS}"
             }
         }
     }
