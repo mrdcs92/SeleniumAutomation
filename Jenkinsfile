@@ -28,22 +28,22 @@ pipeline {
 
         stage('Run Regression Tests') {
             steps {
-                bat 'mvn clean test -P${params.TEST_SUITE}'
+                bat "mvn clean test -P${params.TEST_SUITE}"
             }
         }
     }
 
     post {
         success {
-            echo 'Test suite ${params.TEST_SUITE} passed.'
+            echo "Test suite ${params.TEST_SUITE} passed."
         }
 
         failure {
-            echo 'Test suite ${params.TEST_SUITE} failed.'
+            echo "Test suite ${params.TEST_SUITE} failed."
         }
 
         always {
-            echo 'Pipeline execution finished.'
+            echo "Pipeline execution finished."
         }
     }
 }
