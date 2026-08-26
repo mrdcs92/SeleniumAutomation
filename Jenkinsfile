@@ -58,6 +58,15 @@ pipeline {
 
         	archiveArtifacts artifacts: 'reports/**',
         	allowEmptyArchive: true
+        	
+        	publishHTML([
+				allowMissing: false,
+				alwaysLinkToLastBuild: true,
+				keepAll: true,
+				reportDir: 'reports',
+				reportFiles: 'index.html',
+				reportName: 'Extent Report'
+			])
     	}
         success {
             echo "Test suite ${params.TEST_SUITE} passed."
