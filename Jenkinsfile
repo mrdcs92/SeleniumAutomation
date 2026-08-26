@@ -66,9 +66,5 @@ pipeline {
         failure {
             echo "Test suite ${params.TEST_SUITE} failed."
         }
-
-        always {
-            echo "Pipeline execution finished."
-        }
     }
 }
