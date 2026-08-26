@@ -53,6 +53,12 @@ pipeline {
     }
 
     post {
+		always {
+        	echo 'Archiving Extent Reports and screenshots...'
+
+        	archiveArtifacts artifacts: 'reports/**',
+        	allowEmptyArchive: true
+    	}
         success {
             echo "Test suite ${params.TEST_SUITE} passed."
         }
