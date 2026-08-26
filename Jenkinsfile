@@ -45,7 +45,7 @@ pipeline {
             }
         }
 
-        stage('Run -P${params.TEST_SUITE} Tests') {
+        stage('Run Tests') {
             steps {
                 bat "mvn clean test -P${params.TEST_SUITE} -Dbrowser=${params.BROWSER}${params.HEADLESS}"
             }
