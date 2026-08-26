@@ -1,6 +1,22 @@
 pipeline {
     agent any
 
+	parameters {
+		
+		choice(
+			name: 'TEST_SUITE',
+			choices: [
+				'Regression',
+				'Purchase',
+				'ErrorValidation',
+				'Cucumber',
+				'DbTest'
+			],
+			description: 'Select the Maven test profile to execute'
+		)
+		
+	}
+	
     stages {
 
         stage('Verify Environment') {
@@ -12,18 +28,18 @@ pipeline {
 
         stage('Run Regression Tests') {
             steps {
-                bat 'mvn clean test -PRegression'
+                bat 'mvn clean test -P${params.TEST_SUITE}'
             }
         }
     }
 
     post {
         success {
-            echo 'Automation pipeline completed successfully.'
+            echo 'Test suite ${params.TEST_SUITE} passed.'
         }
 
         failure {
-            echo 'Automation pipeline failed.'
+            echo 'Test suite ${params.TEST_SUITE} failed.'
         }
 
         always {
