@@ -122,7 +122,7 @@ public class BaseTest {
 		TakesScreenshot ts = (TakesScreenshot) webDriver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		
-		String screenshotName = testCaseName + ".png";
+		String screenshotName = testCaseName + System.currentTimeMillis() + ".png";
 
 		File file = new File(System.getProperty("user.dir") + File.separator + "reports" + File.separator + screenshotName);
 		FileUtils.copyFile(source, file);
