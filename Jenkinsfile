@@ -36,6 +36,10 @@ pipeline {
 		
 	}
 	
+	environment {
+		DB_CREDENTIALS = credentials('mysql-qa-db')
+	}
+	
     stages {
 
         stage('Verify Environment') {
