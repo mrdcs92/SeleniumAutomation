@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.List;
-
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -43,7 +40,7 @@ public class DbOrderTest extends BaseTest {
 
 		ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
 
-		List<WebElement> products = productCatalogue.getProductList();
+		// List<WebElement> products = productCatalogue.getProductList();
 
 		productCatalogue.addProductToCart(input.get("product"));
 

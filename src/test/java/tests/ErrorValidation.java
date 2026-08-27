@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -27,7 +26,7 @@ public class ErrorValidation extends BaseTest {
 	@Test(dataProvider = "getData", retryAnalyzer = Retry.class)
 	public void ProductErrorValidation(HashMap<String, String> input) throws IOException {
 		ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
-		List<WebElement> products = productCatalogue.getProductList();
+		// List<WebElement> products = productCatalogue.getProductList();
 		productCatalogue.addProductToCart(input.get("product"));
 		CartPage cartPage = productCatalogue.goToCartPage();
 		Boolean match = cartPage.VerifyProductDisplay(input.get("product"));

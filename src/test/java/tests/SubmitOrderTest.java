@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -24,7 +23,7 @@ public class SubmitOrderTest extends BaseTest {
 
 		ProductCatalogue productCatalogue = landingPage.loginApplication(input.get("email"), input.get("password"));
 
-		List<WebElement> products = productCatalogue.getProductList();
+		// List<WebElement> products = productCatalogue.getProductList();
 
 		productCatalogue.addProductToCart(input.get("product"));
 
@@ -58,18 +57,6 @@ public class SubmitOrderTest extends BaseTest {
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir") + "\\resources\\PurchaseOrder.json");
 		return new Object[][] { { data.get(0) }, { data.get(1) } };
-
-		/*
-		 * HashMap<String, String> map = new HashMap<String, String>(); map.put("email",
-		 * "misterdcs92@gmail.com"); map.put("password", "1999222dst!taN1999222");
-		 * map.put("product", "ZARA COAT 3");
-		 * 
-		 * HashMap<String, String> map1 = new HashMap<String, String>();
-		 * map1.put("email", "misterdcs1992@gmail.com"); map1.put("password",
-		 * "1999222dst!taN1999222"); map1.put("product", "ADIDAS ORIGINAL"); return new
-		 * Object[][] {{map}, {map1}};
-		 */
-
 	}
 
 }
