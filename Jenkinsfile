@@ -36,10 +36,6 @@ pipeline {
 		
 	}
 	
-	environment {
-		DB_CREDENTIALS = credentials('mysql-qa-db')
-	}
-	
     stages {
 
         stage('Verify Environment') {
@@ -51,7 +47,15 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat "mvn clean test -P${params.TEST_SUITE} -Dbrowser=${params.BROWSER}${params.HEADLESS}"
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'mysql-qa-db',
+                        usernameVariable: 'DB_USERNAME',
+                        passwordVariable: 'DB_PASSWORD'
+                    )
+                ]) {
+                    bat "mvn clean test -P${params.TEST_SUITE} -Dbrowser=${params.BROWSER}${params.HEADLESS}"
+                }
             }
         }
     }
