@@ -121,9 +121,12 @@ public class BaseTest {
 
 		TakesScreenshot ts = (TakesScreenshot) webDriver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
-		File file = new File(System.getProperty("user.dir") + "//reports//" + testCaseName + ".png");
+		
+		String screenshotName = testCaseName + ".png";
+
+		File file = new File(System.getProperty("user.dir") + File.separator + "reports" + File.separator + screenshotName);
 		FileUtils.copyFile(source, file);
-		return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
+		return screenshotName;
 	}
 
 	@BeforeMethod(alwaysRun = true)
