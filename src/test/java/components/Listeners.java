@@ -91,7 +91,16 @@ public class Listeners extends BaseTest implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-		ITestListener.super.onTestSkipped(result);
+	    ExtentTest test = ExtentTestManager.getTest();
+
+	    if (test != null) {
+
+	        if (result.getThrowable() != null) {
+	            test.skip(result.getThrowable());
+	        } else {
+	            test.log(Status.SKIP, "Test Skipped");
+	        }
+	    }
 		ExtentTestManager.removeTest();
 	}
 
