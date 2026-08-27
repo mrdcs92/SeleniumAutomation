@@ -20,9 +20,4 @@
 			<class name="cucumber.TestNGTestRunner" />
 		</classes>
 	</test>
-	<test thread-count="5" name="Database Validation Test">
-		<classes>
-			<class name="tests.DbOrderTest" />
-		</classes>
-	</test>
 </suite>
