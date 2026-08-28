@@ -467,3 +467,358 @@ _mvn clean test -PCucumber_
 
 <hr>
 
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>📸 Automatic Failure Screenshots </h2>
+    </summary>
+  </ul>
+</div>
+
+<p>When an automated UI test fails, the framework can capture a browser screenshot and associate the failure evidence with the test report.</p>
+<p>This provides immediate visual context when diagnosing failures from local or CI executions.</p>
+<p>The reporting flow is:</p>
+
+```text
+Test Execution
+ ↓
+TestNG Listener
+ ↓
+Failure Detected
+ ↓
+Capture Screenshot
+ ↓
+Attach to Extent Report
+```
+<p>This reduces the amount of manual investigation required when a regression test fails.</p>
+
+<hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>🔁 Automatic Retry Handling </h2>
+    </summary>
+  </ul>
+</div>
+
+<p><i>Retry.java</i> provides retry functionality for failed tests.</p>
+<p>Retry handling demonstrates how the framework can account for temporary automation instability while still recording final execution results.</p>
+<p>The retry implementation is kept separate from individual tests so retry behavior can be managed at the framework level rather than duplicated throughout the test suite.</p>
+
+<hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>⚙️ Configuration Management </h2>
+    </summary>
+  </ul>
+</div>
+
+<p>Runtime configuration is separated from test logic through:</p>
+
+_resources/GlobalData.properties_
+
+<p>This provides a centralized location for environment and browser-related configuration.</p>
+<p>Separating configuration from test code makes the framework easier to execute in different environments and from CI systems.</p>
+
+<hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>🧹 Automated Report Cleanup </h2>
+    </summary>
+  </ul>
+</div>
+
+<p>The Maven Clean Plugin is configured to clean the generated reports directory when executing the Maven clean lifecycle.</p>
+<p>Therefore:</p>
+
+_mvn clean test_
+
+<p>removes reports from the previous execution before generating results for the new test run.</p>
+<p>This prevents stale screenshots and reports from being confused with results from the current build.</p>
+
+<hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>🔄 Continuous Integration with Jenkins </h2>
+    </summary>
+  </ul>
+</div>
+
+<p>The project is designed to integrate with Jenkins Pipeline for automated test execution.</p>
+<p>The CI workflow supports parameterized execution so Jenkins can control which Maven test suite and browser configuration should be used for a build.</p>
+<p>Conceptually, the pipeline performs:</p>
+
+```text
+GitHub Push
+ │
+ ▼
+GitHub Webhook
+ │
+ ▼
+Jenkins
+ │
+ ▼
+Checkout Source
+ │
+ ▼
+Maven Test Execution
+ │
+ ▼
+Selected TestNG Suite
+ │
+ ▼
+Extent Report
+ │
+ ▼
+Screenshots / Build Artifacts
+```
+
+### GitHub Webhook Integration
+
+<p>The Jenkins environment can be triggered automatically from GitHub through a webhook.</p>
+<p>For local Jenkins development, <b>ngrok</b> can expose the locally hosted Jenkins webhook endpoint so GitHub can deliver push events to the Jenkins server.</p>
+<p>This creates an automated CI workflow where source-control changes can trigger regression execution without manually starting a Jenkins build.</p>
+
+### Parameterized Builds
+
+<p>The pipeline can expose parameters for selecting execution configuration, allowing the same CI job to run different Maven profiles instead of maintaining separate Jenkins jobs for every suite.</p>
+<p>For example:</p>
+
+<ul>
+  <li><i>Regression</i></li>
+  <li><i>Purchase</i></li>
+  <li><i>ErrorValidation</i></li>
+  <li><i>Cucumber</i></li>
+  <li><i>DbTest</i></li>
+</ul>
+
+<p>The selected Jenkins parameter can then be passed to Maven:</p>
+
+_mvn clean test -P<PROFILE>_
+
+<hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>📄 Jenkins Report Publishing </h2>
+    </summary>
+  </ul>
+</div>
+
+<p>Extent HTML reports generated during CI execution can be published through Jenkins using the <b>HTML Publisher Plugin</b>.</p>
+<p>This allows test results to be reviewed directly from an individual Jenkins build.</p>
+<p>Screenshots generated during failed tests can be retained alongside the HTML report, providing CI-accessible failure evidence.</p>
+
+<hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>🔧 Maven Build Management </h2>
+    </summary>
+  </ul>
+</div>
+
+<p>The project uses Maven for:</p>
+
+<ul>
+  <li>Dependency management</li>
+  <li>Test execution</li>
+  <li>Build lifecycle management</li>
+  <li>Test-suite selection</li>
+  <li>Report-directory cleanup</li>
+  <li>Compiler configuration</li>
+  <li>Maven profile management</li>
+</ul>
+
+<p>The Maven Surefire Plugin connects Maven test execution to the appropriate TestNG XML suite:</p>
+
+```text
+Maven Profile
+ ↓
+suiteXmlFile
+ ↓
+Maven Surefire
+ ↓
+TestNG XML
+ ↓
+Automated Tests
+```
+<p>This allows the same framework to support multiple execution strategies without changing source code.</p>
+
+<hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>🚀 Getting Started </h2>
+    </summary>
+  </ul>
+</div>
+
+<p>Install the following:</p>
+
+<ul>
+  <li><i>Java JDK 17+</i></li>
+  <li><i>Apache Maven</i></li>
+  <li><i>Git</i></li>
+  <li><i>Chrome / Edge / Firefox</i></li>
+</ul>
+
+<p>Database tests additionally require:</p>
+
+<ul>
+  <li><i>MySQL</i></li>
+  <li><i>Configured test database</i></li>
+  <li><i>Valid JDBC connection configuration</i></li>
+</ul>
+
+<p>Jenkins is optional for local execution.</p>
+
+### Clone the Repository
+
+_git clone https://github.com/mrdcs92/SeleniumAutomation.git_
+
+_cd SeleniumAutomation_
+
+### Verify Java
+_java -version_
+
+### Verify Maven
+_mvn -version_
+
+### Execute the Regression Suite
+_mvn clean test -PRegression_
+
+<p>Maven will automatically download the required dependencies.</p>
+
+<hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>🧠 Skills Demonstrated </h2>
+    </summary>
+  </ul>
+</div>
+
+<p>This project demonstrates practical experience with:</p>
+
+### Test Automation Engineering
+
+<ul>
+  <li>Selenium WebDriver</li>
+  <li>Java automation development</li>
+  <li>End-to-end browser testing</li>
+  <li>Positive and negative test scenarios</li>
+  <li>Cross-browser testing</li>
+  <li>Data-driven automation</li>
+</ul>
+
+### Framework Design
+
+<ul>
+  <li>Page Object Model</li>
+  <li>Reusable components</li>
+  <li>Separation of concerns</li>
+  <li>Centralized WebDriver management</li>
+  <li>Externalized configuration</li>
+  <li>External test data</li>
+  <li>Automated failure handling</li>
+</ul>
+
+### Testing Frameworks
+
+<ul>
+  <li>TestNG</li>
+  <li>TestNG XML suites</li>
+  <li>DataProviders</li>
+  <li>Listeners</li>
+  <li>Retry mechanisms</li>
+  <li>Cucumber BDD</li>
+</ul>
+
+### Backend Validation
+
+<ul>
+  <li>JDBC</li>
+  <li>MySQL</li>
+  <li>Database-driven tests</li>
+  <li>UI/backend validation architecture</li>
+</ul>
+
+### Reporting
+
+<ul>
+  <li>Extent Reports</li>
+  <li>Failure screenshots</li>
+  <li>TestNG listeners</li>
+  <li>Jenkins HTML report publishing</li>
+</ul>
+
+### Build & CI
+
+<ul>
+  <li>Maven</li>
+  <li>Maven profiles</li>
+  <li>Maven Surefire</li>
+  <li>Jenkins Pipeline</li>
+  <li>Parameterized CI builds</li>
+  <li>GitHub webhooks</li>
+  <li>Automated CI execution</li>
+</ul>
+
+### Source Control
+
+<ul>
+  <li>Git</li>
+  <li>GitHub</li>
+  <li>CI-triggered source control workflows</li>
+</ul>
+
+<hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2>🔮 Potential Future Enhancements </h2>
+    </summary>
+  </ul>
+</div>
+
+<p>The framework is intentionally structured so additional automation capabilities can be incorporated as it evolves.</p>
+<p>Potential future enhancements include:</p>
+
+### REST API Automation
+
+<p>Add <b>REST Assured</b> to provide API-level testing alongside the existing UI and database layers.</p>
+
+```text
+UI Tests        →  Selenium
+API Tests       →  REST Assured
+Database Tests  →  JDBC / MySQL
+```
+
+<p>This would allow validation across multiple layers of an application and expand the project into a more complete end-to-end quality engineering framework.</p>
+
+### Containerized Test Execution
+
+<p>Introduce <b>Docker</b> to provide a consistent, reproducible execution environment across local development and CI.</p>
+<p>Potential additions include:</p>
+
+<ul>
+  <li>Dockerized test execution</li>
+  <li>Selenium Grid</li>
+  <li>Remote WebDriver</li>
+  <li>Parallel browser containers</li>
+</ul>
+
+<hr>
