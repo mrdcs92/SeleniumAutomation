@@ -21,7 +21,7 @@ WebDriver driver;
 		
 	}
 	
-	//WebElement userEmail = driver.findElement(By.id("userEmail"));
+	
 	//PageFactory
 	
 	@FindBy(css=".totalRow button")
