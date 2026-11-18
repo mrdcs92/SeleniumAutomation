@@ -29,14 +29,15 @@ public class DatabaseDataProvider {
 				map.put("password", rs.getString("password"));
 				map.put("product", rs.getString("product"));
 				
-				if (data.isEmpty()) {
-				    throw new RuntimeException(
-				        "Database query returned no test data from table 'testinfo'"
-				    );
-				}
-				
 				data.add(new Object[] { map });
 			}
+			
+			if (data.isEmpty()) {
+			    throw new RuntimeException(
+			        "Database query returned no test data from table 'testinfo'"
+			    );
+			}
+			
 		} catch (SQLException e) {
             throw new RuntimeException(
                     "Failed to retrieve test data from MySQL database", e
